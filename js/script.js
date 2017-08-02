@@ -1,10 +1,18 @@
+'use strict'
 window.onscroll = function () {
-  var scrolled = window.pageYOffset,
-    header = document.querySelector('header'),
-    topHeader = document.querySelector('.topHeader'),
-    subHeader = document.querySelector('.subHeader');
 
-  if (scrolled > 1000) {
+  var scrolled = window.pageYOffset,
+    header = qS('header'),
+    topHeader = qS('.topHeader'),
+    subHeader = qS('.subHeader'),
+    a = scrolled > 1000,
+    b = scrolled > 2000,
+    c = scrolled > 3000,
+    d = scrolled > 4000,
+    e = scrolled > 5000,
+    f = scrolled > 6000;
+
+  if (a) {
     header.classList.add('minWidth');
     header.style.top = scrolled + 'px';
   } else {
@@ -12,33 +20,25 @@ window.onscroll = function () {
     header.style.top = '0';
   }
 
-  if (scrolled > 2000) {
-    topHeader.classList.add('mTop');
-  } else {
-    topHeader.classList.remove('mTop');
+
+  function qS(el) {
+    return document.querySelector(el);
   }
 
-  if (scrolled > 3000) {
-    topHeader.classList.add('maxHeight');
-  } else {
-    topHeader.classList.remove('maxHeight');
+
+  function checkPos(condition, elem, className) {
+    if (condition) {
+      return elem.classList.add(className)
+    } else {
+      return elem.classList.remove(className)
+    }
   }
 
-  if (scrolled > 4000) {
-    subHeader.classList.add('dblock');
-  } else {
-    subHeader.classList.remove('dblock');
-  }
-  if (scrolled > 5000) {
-    topHeader.classList.add('rotateFirstTopHeader');
-    subHeader.classList.add('rotateFirstSubHeader');
-  }
-
-  if (scrolled > 6000) {
-    topHeader.classList.add('rotateTopHeader');
-    subHeader.classList.add('rotateSubHeader');
-  } else {
-    topHeader.classList.remove('rotateTopHeader');
-    subHeader.classList.remove('rotateSubHeader');
-  }
+  checkPos(b, topHeader, 'mTop');
+  checkPos(c, topHeader, 'maxHeight');
+  checkPos(d, subHeader, 'dblock');
+  checkPos(e, topHeader, 'rotateFirstTopHeader');
+  checkPos(e, subHeader, 'rotateFirstSubHeader');
+  checkPos(f, topHeader, 'rotateTopHeader');
+  checkPos(f, subHeader, 'rotateSubHeader');
 }
