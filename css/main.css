@@ -1,0 +1,56 @@
+header {
+  position: sticky;
+  top: 0; }
+  header .navbar-default {
+    background-color: #c6e1ec !important;
+    position: relative;
+    margin-bottom: 0;
+    transform: rotateX(0deg);
+    transition: all 0.5s; }
+  header .subHeader {
+    background-color: forestgreen;
+    color: powderblue;
+    font: 1em/1.2em Open Sans, sans-serif;
+    padding: 35px;
+    display: none;
+    transition: all 0.5s; }
+
+.navbar-right {
+  padding-right: 15px; }
+
+section div {
+  width: 90%;
+  background-color: #ddd;
+  margin: 0 auto;
+  padding: 20px; }
+
+.minWidth {
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%); }
+
+.mTop {
+  margin-top: 20px; }
+
+.maxHeight {
+  padding: 30px;
+  font-size: 1.2em; }
+
+.dblock {
+  display: block !important; }
+
+.rotateFirstTopHeader {
+  transform: translateY(0%) rotateX(0deg); }
+
+.rotateFirstSubHeader {
+  transform: rotateX(-90deg);
+  margin-top: -60px; }
+
+.rotateTopHeader {
+  transform: translateY(-50%) rotateX(90deg) !important; }
+
+.rotateSubHeader {
+  transform: translateY(-50%) rotateX(0deg) !important; }
+
+/*# sourceMappingURL=main.css.map */
